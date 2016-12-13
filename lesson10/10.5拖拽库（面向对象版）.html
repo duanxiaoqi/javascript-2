@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            border: 2px solid red;
+            width: 240px;
+            position: absolute;
+            top:0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<button>锁定位置</button>
+<button>水平锁定</button>
+<button>垂直锁定</button>
+<div style="position: absolute;left: 0;top: 30px;">
+    <ul>
+        <li>drag: <span>false</span></li>
+        <li>offsetTop: <span></span></li>
+        <li>offsetLeft: <span></span></li>
+    </ul>
+</div>
+
+<script>
+    window.onload=function () {
+        var div=document.getElementsByTagName('div')[0];
+        var span=document.getElementsByTagName('span');
+        var clientX,clientY,moving;
+        var btn=document.getElementsByTagName('button');
+
+        div.onmousedown=function (event) {
+
+            event=event||window.event;
+            clientX=event.clientX;
+            clientY=event.clientY;
+            moving=true;
+            span[0].innerHTML='true';
+
+        }
+
+        btn[0].onclick=function () {
+            btn[0].innerHTML='hh';
+            moving=false;
+        }
+
+        div.onmousemove=function (enent) {
+            if(moving){
+                event=event||window.event;
+                var newClientX=enent.clientX;
+                var newClientY=enent.clientY;
+                var left=parseInt(div.style.left);
+                var top=parseInt(div.style.top);
+                div.style.left=left+(newClientX-clientX)+'px';
+                div.style.top=top+(newClientY-clientY)+'px';
+                span[2].innerHTML=div.style.left;
+                span[1].innerHTML=div.style.top;
+                clientX=newClientX;
+                clientY=newClientY;
+            }
+        }
+
+        div.onmouseup=function (event) {
+            moving=false;
+        }
+
+
+    }
+</script>
+</body>
+</html>

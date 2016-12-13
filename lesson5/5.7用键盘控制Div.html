@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+
+            background: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        红色方块为键盘操作区域，您可以进行如下操作：
+        上：↑ 下：↓ 左：← 右：→
+
+        Ctrl + 1 : 背景变为绿色
+        Ctrl + 2 : 背景变为黄色
+        Ctrl + 3 : 背景变为蓝色
+        Ctrl + ↑ : 放大
+        Ctrl + ↓ : 缩小
+
+    </p>
+    <div style="top: 100px;left: 100px;background: red;width:100px;height:100px;"></div>
+    <script>
+        window.onload=function () {
+
+            document.onkeydown=function (event) {
+                var div=document.getElementsByTagName('div')[0];
+                switch (event.keyCode){
+                    case 37:
+                        if(event.ctrlKey){
+                            div.style.width=parseInt(div.style.width)+20+'px';
+                            div.style.height=parseInt(div.style.height)+20+'px';
+                        } else {
+                            console.log(div.style.left);
+                            newleft = parseInt(div.style.left) - 20 + 'px';
+                            console.log(newleft);
+                            div.style.left = newleft;
+                        }
+                        break;
+                    case 38:
+                        div.style.top=parseInt(div.style.top)-20+'px';
+                        break;
+                    case 39:
+
+                            div.style.left=parseInt(div.style.left)+20+'px';
+
+
+                        break;
+                    case 40:
+                        div.style.top=parseInt(div.style.top)+20+'px';
+                        break;
+                    case 49:
+                        if(event.ctrlKey){
+                            div.style.background='green';
+                        }
+                        break;
+                    case 50:
+                        if(event.ctrlKey){
+                            div.style.background='yellow';
+                        }
+                        break;
+                    case 51:
+                        if(event.ctrlKey){
+                            div.style.background='blue';
+                        }
+                        break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

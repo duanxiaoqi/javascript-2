@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+
+		div {
+			display: inline-block;
+			margin: 20px auto;
+		}
+
+		p {
+			width: 200px;
+			border: 3px solid orange;
+			padding: 5px;
+			color: red;
+			background: pink;
+			display: none;
+			margin: 10px auto;
+		}
+
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			var div=document.getElementsByTagName('div')[0];
+			var p=document.getElementsByTagName('p')[0];
+			console.log(div);
+			div.onmouseover=function() {
+				p.style.display='block';
+			}
+			div.onmouseout=function() {
+				p.style.display='none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<input type="checkbox">两周内自动登陆
+	</div>
+	<p>
+		为了您的安全，请不要在网吧或公用网络使用该功能。
+	</p>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+
+		body,
+		ul,
+		li {
+			padding: 0;
+			margin: 0;
+		}
+
+		#box {
+			width: 361px;
+			margin: 20px auto;
+		}
+
+		#show {
+			width: 340px;
+			text-align: right;
+			border: 3px solid black;
+			padding: 10px 5px 5px 10px;
+			
+		}
+
+		.clearfix:after{
+		 	content: '';
+		 	display: block; 
+		 	clear: both; 
+		 	visibility: hidden;  
+		 }
+
+		#small {
+			width: 340px;
+			height: 30px;
+			margin-bottom: 10px;
+			float: right;
+			font: 18px/30px "宋体";
+		}
+
+		#big {
+			width: 340px;
+			height: 60px;
+			float: right;
+			font: 48px/60px "宋体";
+		}
+
+		ul {
+			width: 340px;
+			height: 430px;
+			
+			padding: 10px 5px 5px 10px;
+			border: 3px solid black;
+		}
+
+		li {
+			display: inline-block;
+			float: left;
+			width: 100px;
+			height: 60px;
+			list-style: none;
+			text-align: center;
+			line-height: 60px;
+			font-size: 20px;
+			border: 3px solid black;
+			margin: 0 5px 5px 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function () {
+			var li=document.getElementsByTagName('li');
+			var small=document.getElementById('small');
+			var big=document.getElementById('big');
+
+			li[0].onclick=function() {
+				small.innerHTML='';
+				big.innerHTML=0;
+			}
+			for (var i = 1; i < 17; i++) {
+				li[i].onclick=function () {
+				    if(big.innerHTML==0){
+                        big.innerHTML=this.innerHTML;
+                    } else{
+                        big.innerHTML+=this.innerHTML;
+                    }
+
+
+					// if(big.innerHTML) {
+					// 	small.innerHTML+=big.innerHTML;
+					// }
+					// big.innerHTML=this.innerHTML;
+				}
+			}
+//			for (var i = 12; i < 17; i++) {
+//				li[i].onclick=function () {
+//
+//					small.innerHTML+=big.innerHTML;
+//					big.innerHTML=this.innerHTML;
+//				}
+//			}
+			li[17].onclick=function() {
+				small.innerHTML=big.innerHTML;
+//                big.innerHTML=
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<div id="show" class="clearfix">
+			<div id="small"></div>
+			<div id="big">0</div>
+		</div>
+		<ul>
+			<li>c</li>
+			<li>0</li>
+			<li>.</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>+</li>
+			<li>-</li>
+			<li>*</li>
+			<li>/</li>
+			<li>%</li>
+			<li>=</li>
+		</ul>
+	</div>
+	
+</body>
+</html>

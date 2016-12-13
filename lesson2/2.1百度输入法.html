@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body,
+		ul,
+		li {
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+
+		button {
+			margin: 10px auto;
+		}
+
+		li {
+			list-style: none;
+			padding: 5px 0;
+
+		}
+
+		ul li:nth-child(2) {
+			border-bottom: 2px solid black;
+			background: 
+		}
+
+		ul {
+			margin: 10px auto;
+			width: 60px;
+			border: 2px solid black;
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function() {
+			var btn=document.getElementsByTagName('button')[0];
+			var ul=document.getElementsByTagName('ul')[0];
+			var li=document.getElementsByTagName('li');
+            var on=false;
+
+			btn.onclick=function () {
+
+                on=!on;
+                if(on){
+                    ul.style.display='block';
+                } else {
+                    ul.style.display='none';
+                }
+			}
+
+			li[2].onclick=function () {
+				ul.style.display='none';
+			}
+
+			for (var i = 0; i < li.length; i++) {
+				li[i].index=i;
+				li[i].onmouseover=function() {
+					li[this.index].style.background='yellow';
+				}
+				li[i].onmouseout=function() {
+					li[this.index].style.background='none';
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+	<button>输入法</button>
+	<ul>
+		<li>手写</li>
+		<li>拼音</li>
+		<li>关闭</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        span{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: lightyellow;
+        }
+    </style>
+</head>
+<body>
+    点击星星就能打分
+    <span>
+        <dl>
+            <dt>1分</dt>
+            <dd>aaa</dd>
+        </dl>
+    </span>
+    <span>
+        <dl>
+            <dt>2分</dt>
+            <dd>bbb</dd>
+        </dl>
+    </span>
+    <span>
+        <dl>
+            <dt>3分</dt>
+            <dd>ccc</dd>
+        </dl>
+    </span>
+    <span>
+        <dl>
+            <dt>4分</dt>
+            <dd>ddd</dd>
+        </dl>
+    </span>
+    <span>
+        <dl>
+            <dt>5分</dt>
+            <dd>eee</dd>
+        </dl>
+    </span>
+    <strong></strong>
+    <em></em>
+    <script>
+        window.onload=function () {
+            var span=document.getElementsByTagName('span');
+
+            for(var i=0;i<span.length;i++){
+                span[i].index=i;
+                span[i].onmouseover=function () {
+                    for(var i=0;i<span.length;i++){
+                        span[i].style.background='lightyellow';
+                    }
+                    for(var j=0;j<this.index+1;j++){
+                        span[j].style.background='pink';
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

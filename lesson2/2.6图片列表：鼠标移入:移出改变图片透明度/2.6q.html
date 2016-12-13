@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			width: 900px;
+			height: 900px;
+			margin: 30px auto;
+		}
+
+		img {
+			width: 300px;
+			height: 300px;
+			float: left;
+			opacity: .3;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function () {
+			var img=document.getElementsByTagName('img');
+			for (var i = 0; i < img.length; i++) {
+				img[i].onmouseover=function() {
+					this.style.opacity=1;
+				}
+				img[i].onmouseout=function() {
+					this.style.opacity= .3;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<img src="img/1.jpg" alt="">
+		<img src="img/2.jpg" alt="">
+		<img src="img/3.jpg" alt="">
+		<img src="img/4.jpg" alt="">
+		<img src="img/5.jpg" alt="">
+		<img src="img/6.jpg" alt="">
+		<img src="img/7.jpg" alt="">
+		<img src="img/8.jpg" alt="">
+		<img src="img/9.jpg" alt="">
+	</div>
+</body>
+</html>

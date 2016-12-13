@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function () {
+			var div=document.getElementsByTagName('div')[0];
+			window.onclick=function hello(event) {
+				alert(event.clientX+','+event.clientY);
+			}
+
+			window.onkeydown=function (event) {
+				div.innerHTML=event.keyCode;
+			}
+
+			window.oncontextmenu=function () {
+				return false;
+			}
+		}
+	</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

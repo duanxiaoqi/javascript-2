@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link id="skin" rel="stylesheet" href="rdiv.css">
+	<style type="text/css">
+		body,
+		ul,
+		li {
+			padding: 0;
+			margin: 0;
+		}
+
+		#btn {
+			margin: 20px auto;
+			width: 1215px;
+		}
+
+		#btn div {
+			width: 15px;
+			height: 15px;
+			display: inline-block;
+			margin-right: 40px;
+		}
+
+		ul {
+			margin: 20px auto;
+			width: 1215px;
+			height: 50px;
+			border: 3px solid white;
+		}
+
+		li {
+			list-style: none;
+			font: 24px/50px "宋体";
+			text-align: center;
+			vertical-align: middle;
+			border-right: 3px solid white; 
+			display: inline-block;
+			width: 200px;
+			float: left;
+			
+			color: white;
+		}
+
+		ul li:nth-child(6) {
+			border: none;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function () {
+			var btn=document.getElementById('btn');
+			var skin=document.getElementById('skin');
+			var div=btn.getElementsByTagName('div');
+			for(var i=0;i<div.length;i++) {
+				div[i].onclick=function () {
+					skin.href= this.id+".css";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="btn">
+		<div id="rdiv"></div>
+		<div id="gdiv"></div>
+		<div id="bdiv"></div>
+	</div>
+	
+	<ul>
+		<li>新闻</li>
+		<li>娱乐</li>
+		<li>体育</li>
+		<li>电影</li>
+		<li>音乐</li>
+		<li>旅游</li>
+	</ul>
+</body>
+</html>

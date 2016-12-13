@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		html,
+		body {
+			overflow: hidden;
+		}
+
+		body,
+		div,
+		ul,
+		li {
+			margin: 0;
+			padding: 0;
+		}
+
+		#box li {
+			display: inline-block;
+		}
+
+        #big {
+            position: absolute;
+            top:0;
+            left:0;
+        }
+	</style>
+</head>
+<body>
+	<div id="box">
+		<ul>
+			<li><img src="img/shirt_1.jpg" alt=""></li>
+			<li><img src="img/shirt_2.jpg" alt=""></li>
+			<li><img src="img/shirt_3.jpg" alt=""></li>
+			<li><img src="img/shirt_4.jpg" alt=""></li>
+		</ul>
+	</div>
+
+    <img id="big" src="" alt="">
+
+    <script>
+        window.onload=function () {
+            var box=document.getElementById('box');
+            var img=box.getElementsByTagName('img');
+
+            for(var i=0;i<img.length;i++){
+                img[i].onmouseover=function (event) {
+                    var big=document.getElementById('big');
+                    var s=this.src.toString();
+                    var str='_big.jpg';
+                    big.src=(s.slice(0,-4).concat(str));
+                    big.style.left=event.clientX+'px';
+                    big.style.top=event.clientY+'px';
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

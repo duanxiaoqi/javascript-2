@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="a" value="">vs
+    <input type="text" id="b" value="">
+    <button>最大的数是>></button>
+    <span>?</span>
+    <script>
+        window.onload=function () {
+            var btn=document.getElementsByTagName('button')[0];
+            var span=document.getElementsByTagName('span')[0];
+            btn.onclick=function () {
+                var input=document.getElementsByTagName('input');
+                span.innerHTML=parseInt(input[0].value)>parseInt(input[1].value)? input[0].value : input[1].value;
+            }
+        }
+    </script>
+</body>
+</html>

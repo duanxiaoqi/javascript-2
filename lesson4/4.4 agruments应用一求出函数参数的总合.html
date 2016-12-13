@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button>求和</button>
+    <script>
+        window.onload=function () {
+            var sum=0;
+            function f () {
+                for (var i=0;i<arguments.length;i++){
+                    sum+=arguments[i];
+                }
+                return sum;
+            }
+
+            var btn=document.getElementsByTagName('button')[0];
+            btn.onclick=function () {
+                alert(f(1,2,3,4));
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

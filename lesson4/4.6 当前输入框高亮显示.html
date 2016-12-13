@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+用户名<input type="text">
+<hr>
+密码<input type="text">
+<script>
+    window.onload=function () {
+        var input=document.getElementsByTagName('input');
+        for(var i=0;i<input.length;i++){
+            input[i].index=i;
+            input[i].onclick=function () {
+
+                for(var i=0;i<input.length;i++){
+                    input[i].style.background='none';
+                }
+                console.log(this.index);
+                input[this.index].style.background='pink';
+            }
+        }
+    }
+</script>
+</body>
+</html>

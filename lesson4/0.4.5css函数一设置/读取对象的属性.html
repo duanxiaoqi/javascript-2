@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div style="width: 400px;
+            height: 200px;
+            background: wheat;">
+        <button>get style</button>
+        <button>set style</button>
+        <button>default style</button>
+    </div>
+
+    <script>
+        window.onload=function () {
+
+            var btn=document.getElementsByTagName('button');
+
+
+
+//
+//            d.setAttribute("height","200px");
+//            d.setAttribute("backgroundColor","wheat");
+
+
+
+            btn[1].onclick=function () {
+                var div=document.getElementsByTagName('div')[0];
+                div.setAttribute("style","width: 330px,height: 100px,background: pink");
+//                div.style.width='330px';
+//                div.style.height='100px';
+//                div.style.background='pink';
+//                div.style.borderColor='green';
+            };
+//
+//            btn[2].onclick=function () {
+//                div.style.width='400px';
+//                div.style.height='200px';
+//                div.style.background='wheat';
+//                div.style.borderColor='red';
+//            }
+//
+            btn[0].onclick=function () {
+
+
+
+                alert(div.getAttribute('style'));
+            };
+        }
+
+    </script>
+</body>
+</html>

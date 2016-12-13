@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span>用户按下键盘，显示keyCode</span>
+    <script>
+        window.onload=function () {
+            var span=document.getElementsByTagName('span')[0];
+            document.onkeydown=function (event) {
+                span.innerHTML=event.keyCode;
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

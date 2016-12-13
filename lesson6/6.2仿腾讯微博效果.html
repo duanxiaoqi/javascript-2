@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 40px;
+            height: 40px;
+        }
+
+        #img1 {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <h3>评论</h3>
+        <input type="text" value="">
+        <p>
+            <img src="img/1.jpg" alt="" id="img1">
+            <img src="img/2.jpg" alt="" id="img2">
+            <img src="img/3.jpg" alt="" id="img3">
+            <img src="img/4.jpg" alt="" id="img4">
+        </p>
+        <textarea name="" id="" cols="50" rows="4"></textarea><br>
+        <span>还能输入<b>140</b>个字</span>
+        <button id="button">广播</button>
+    </div>
+    <ul></ul>
+    <script>
+        window.onload=function () {
+            var btn=document.getElementById('button');
+            var img=document.getElementsByTagName('img');
+            var imgSrc;
+
+            for(var i=1;i<img.length;i++){
+                img[i].onmouseover=function () {
+                    for(var i=1;i<img.length;i++){
+                        img[i].style.border='none';
+                    }
+                    this.style.border="1px solid red";
+                }
+            }
+            for(var i=0;i<img.length;i++){
+                img[i].onclick=function () {
+                    for(var i=0;i<img.length;i++){
+                        img[i].style.border='none';
+                    }
+                    this.style.border="1px solid red";
+                    imgSrc=this.src;
+                }
+            }
+            var textarea=document.getElementsByTagName('textarea')[0];
+            textarea.onkeyup=function () {
+                var len = textarea.value.toString().length;
+                var b = document.getElementsByTagName('b')[ 0 ];
+                var num = 140 - parseInt(len);
+                if(num>-1){
+                    b.innerHTML=num;
+                } else {
+                    alert('不可输入');
+                }
+            }
+            btn.onclick=function () {
+                var ul=document.getElementsByTagName('ul')[0];
+                var input=document.getElementsByTagName('input')[0];
+                var textarea=document.getElementsByTagName('textarea')[0];
+                if(input.value==''){
+                    alert('请填写你的姓名');
+                } else if(input.value.length<2||input.value.length>8){
+                    alert('姓名由2-8位字母、数字、下划线、汉字组成!');
+                } else if(textarea.value==''){
+                    alert('随便说点什么吧');
+                } else {
+                    var comment=document.createElement('li');
+                    var pic=document.createElement('img');
+                    pic.setAttribute('src',imgSrc);
+                    var detail=document.createElement('span');
+                    detail.innerHTML=input.value+':'+textarea.value;
+                    console.log(pic);
+                    var del=document.createElement('button');
+                    del.innerHTML='删除';
+                    comment.appendChild(pic);
+                    comment.appendChild(detail);
+                    comment.appendChild(del);
+                    ul.appendChild(comment);
+
+
+                }
+            }
+        }
+    </script>
+</div>
+
+</body>
+</html>

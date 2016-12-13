@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload=function () {
+            var input=document.getElementsByTagName('input');
+            var button=document.getElementsByTagName('button');
+            var strong=document.getElementsByTagName('strong');
+
+
+            button[0].onclick=function () {
+                var str=input[0].value;
+                var sum=0;
+                var arr = str.split(",");
+                for (var i = 0; i < arr.length; i++) {
+                    sum+=parseInt(arr[i]);
+                }
+                strong[0].innerHTML=sum;
+            }
+
+            button[1].onclick=function () {
+                var str=input[1].value;
+                var max=0;
+                var arr = str.split(",");
+                for (var i = 0; i < arr.length; i++) {
+                    if(max<arr[i]){
+                        max=arr[i];
+                    }
+                }
+                strong[1].innerHTML=max;
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" value="1,2,3,4,5">
+输入数字求和，数字之间用半角","号分隔
+<button>求和</button>
+<strong></strong>
+<hr>
+<input type="text" value="1,2,3,4,5">
+输入数字求最大值，数字之间用半角","号分隔
+<button>求最大值</button>
+<strong></strong>
+</body>
+</html>

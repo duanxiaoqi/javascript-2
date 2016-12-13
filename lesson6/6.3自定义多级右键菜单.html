@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body,
+        ul,
+        li{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            height: 30px;
+            line-height: 30px;
+            background: red;
+            position: relative;
+            width: 50px;
+
+        }
+
+        li:hover {
+            background: yellow;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        #wrap{
+            position: absolute;
+            display: none;
+        }
+
+        #wrap ul{
+            display: none;
+            position: relative;
+        }
+
+
+
+        ul{
+
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+        <ul id="wrap">
+            <li>
+                <h4>第一章</h4>
+                <ul style="display: none">
+                    <li><a href="">第一课</a></li>
+                    <li><a href="">第二课</a></li>
+                    <li><a href="">第三课</a></li>
+                </ul>
+            </li>
+            <li>
+                <h4>第二章</h4>
+                <ul>
+                    <li><a href="">第四课</a></li>
+                    <li><a href="">第五课</a></li>
+                    <li><a href="">第六课</a></li>
+                </ul>
+            </li>
+            <li>
+                <h4>第三章</h4>
+                <ul>
+                    <li><a href="">第七课</a></li>
+                    <li><a href="">第八课</a></li>
+                    <li><a href="">第九课</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    <script>
+        var wrap=document.getElementById('wrap');
+        var li=wrap.childNodes;
+        var sUl=wrap.getElementsByTagName('ul');
+        document.oncontextmenu=function (ev) {
+            var ev = ev || window.event;
+            wrap.style.display='block';
+
+            wrap.style.top=ev.clientY + 'px';
+            wrap.style.left=ev.clientX + 'px';
+            return false;
+        }
+
+        for(var i=0;i<li.length;i++){
+            li[i].onmouseover=function () {
+                this.children[1].style.display='block';
+                this.children[1].style.left='50px';
+                this.children[1].style.top='-50px';
+            };
+
+            li[i].onmouseout=function () {
+                this.children[1].style.display='none';
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <span>1</span>
+    <script>
+        window.onload=function () {
+            var span=document.getElementsByTagName('span')[0];
+            var count=1;
+            setInterval(function () {
+                count++;
+                span.innerHTML=count;
+            },1000)
+        }
+    </script>
+</body>
+</html>

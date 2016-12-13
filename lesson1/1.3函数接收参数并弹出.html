@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			padding: 0;
+			margin: 0;
+			text-align: center;
+		}
+
+		input {
+			display: block;
+			margin: 10px auto;
+		}
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function() {
+			
+			var text1=document.getElementById('text1');
+			var text2=document.getElementById('text2');
+			var submit=document.getElementById('submit');
+			
+
+			submit.onclick=function() {
+				alert(text1.value);
+				alert(text2.value);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="text1" value="北京市">
+	<input type="text" id="text2" value="朝阳区">
+	<input type="button" id="submit" value="传参">
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		window.onload=function () {
+			var div=document.getElementsByTagName('div');
+			var arr=[1,2,3,4,5,6];
+			for (var i = 0; i < arr.length; i++) {
+				div[0].innerHTML=div[0].innerHTML+' '+arr[i];
+			}
+
+			arr.reverse();
+			for (var i = 0; i < arr.length; i++) {
+				div[1].innerHTML=div[1].innerHTML+' '+arr[i];
+			}
+
+			// arr.sort();
+			// for (var i = 0; i < arr.length; i++) {
+			// 	div[2].innerHTML=div[2].innerHTML+' '+arr[i];
+			// }
+
+			arr.push(7);
+			for (var i = 0; i < arr.length; i++) {
+				div[3].innerHTML=div[3].innerHTML+' '+arr[i];
+			}
+
+			arr.unshift(7);
+			for (var i = 0; i < arr.length; i++) {
+				div[4].innerHTML=div[4].innerHTML+' '+arr[i];
+			}
+
+			var num=arr.shift();
+			for (var i = 0; i < arr.length; i++) {
+				div[5].innerHTML=div[5].innerHTML+' '+arr[i];
+			}
+			div[5].innerHTML=div[5].innerHTML+'取出'+num;
+
+			var num1=arr.pop();
+			for (var i = 0; i < arr.length; i++) {
+				div[6].innerHTML=div[6].innerHTML+' '+arr[i];
+			}
+			div[6].innerHTML=div[6].innerHTML+'取出'+num1;
+
+			var num1=arr.splice(1,0,4);
+			for (var i = 0; i < arr.length; i++) {
+				div[7].innerHTML=div[7].innerHTML+' '+arr[i];
+			}
+
+			var newArr=arr.slice(0,2);
+			for (var i = 0; i < newArr.length; i++) {
+				div[8].innerHTML=div[8].innerHTML+' '+arr[i];
+			}
+
+			var newArr2=[7,8];
+
+			var newArr1=arr.concat(newArr2);
+			for (var i = 0; i < newArr1.length; i++) {
+				div[9].innerHTML=div[9].innerHTML+' '+arr[i];
+			}
+			
+		}		
+	</script>
+</head>
+<body>
+	<div>数组</div>
+	<div>颠倒数组arr.reverse();</div>
+	<div>数组排序sort</div>
+	<div>数组后插push</div>
+	<div>数组前插unshift</div>
+	<div>数组前删除shift</div>
+	<div>数组后删除pop</div>
+	<div>替换</div>
+	<div>复制</div>
+	<div>连接</div>
+</body>
+</html>

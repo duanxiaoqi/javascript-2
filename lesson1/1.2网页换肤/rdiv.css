@@ -1,0 +1,22 @@
+#rdiv {
+	border: 10px solid red;
+	background: white;
+}
+
+#gdiv {
+	border: 10px solid green;
+	background: green;
+}
+
+#bdiv {
+	border: 10px solid black;
+	background: black;
+}
+
+body {
+	background: #fdd;
+}
+
+li {
+	background: red;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="wrap">
+    行数 <input type="text" id="row" value="">
+    列数 <input type="text" id="col" value="">
+    <button>生成表格</button>
+    <span></span>
+
+</div>
+
+<script>
+    window.onload=function () {
+        var wrap=document.getElementById('wrap');
+        var btn=document.getElementsByTagName('button')[0];
+        var div=document.getElementsByTagName('table')[0];
+        btn.onclick=function () {
+            var row=document.getElementById('row');
+            var col=document.getElementById('col');
+            if(document.getElementsByTagName('table')[0]){
+                wrap.removeChild(document.getElementsByTagName('table')[0]);
+            }
+
+
+
+
+            var tab=document.createElement('table');
+            var tr=document.createElement('tr');
+
+            for(var i=0;i<parseInt(row.value);i++){
+                var tr=document.createElement('tr');
+                for(var j=0;j<parseInt(col.value);j++){
+                    var td=document.createElement('td');
+                    var txt=document.createTextNode(parseInt(Math.random()*255));
+                    var s1=parseInt(Math.random()*255);
+                    var s2=parseInt(Math.random()*255);
+                    var s3=parseInt(Math.random()*255);
+                    var s='background:rgb('+s1+','+s2+','+s3+')';
+                    td.setAttribute('style',s);
+                    td.appendChild(txt);
+                    td.onclick=function () {
+                        var span=document.getElementsByTagName('span')[0];
+                        span.innerHTML='数字'+this.innerHTML+'颜色'+this.style.background;
+                    }
+                    tr.appendChild(td);
+                }
+                tab.appendChild(tr);
+            }
+            wrap.appendChild(tab);
+        }
+
+
+    }
+</script>
+</body>
+</html>

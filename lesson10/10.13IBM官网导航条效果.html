@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        body,
+        div,
+        ul,
+        li{
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        #wrap{
+            position: fixed;
+            top:0;
+            width: 100%;
+        }
+
+        #top{
+            height: 30px;
+            line-height: 30px;
+            background: palevioletred;
+            text-align: center;
+        }
+
+        #bottom{
+            height: 60px;
+            background: pink;
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+            height: 60px;
+            line-height: 60px;
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="top"><span>下拉滚动条</span></div>
+    <div id="bottom">
+        <ul>
+            <li>解决方案</li>
+            <li>服务</li>
+            <li>产品</li>
+            <li>支持与下载</li>
+            <li>个性化服务</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+    window.onload=function () {
+        window.onscroll=function () {
+            var ul=document.getElementsByTagName('ul')[0];
+            var span=document.getElementsByTagName('span')[0];
+            var wrap=document.getElementById('wrap');
+            var top=document.getElementById('top');
+            var bottom=document.getElementById('bottom');
+            top.style.height='4px';
+            bottom.style.height='30px';
+            ul.style.display='none';
+            span.style.display='none';
+            wrap.onmouseover=function () {
+                top.style.height='30px';
+                bottom.style.height='60px';
+                ul.style.display='block';
+                span.style.display='block';
+            }
+            wrap.onmouseout=function () {
+                top.style.height='4px';
+                bottom.style.height='30px';
+                ul.style.display='none';
+                span.style.display='none';
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#mask {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 5;
+			background-color: #000;
+			opacity: .3;
+			display: none;
+		}
+
+		#content {
+			position: relative;
+			width: 600px;
+			height: 400px;
+			border: 6px solid orange;
+			z-index: 10;
+			margin: 50px auto;
+			display: none;
+			background: white;
+		}
+
+		#top {
+			height: 50px;
+			border-bottom: 6px solid orange;
+			background: pink;
+			display: none;
+			z-index: 15;
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		window.onload=function () {
+			var btn=document.getElementsByTagName('button');
+			var div=document.getElementsByTagName('div');
+			var div1=document.getElementById('mask');
+			var div2=document.getElementById('content');
+			btn[0].onclick=function () {
+				for (var i = 0; i < div.length; i++) {
+					div[i].style.display='block';
+				}
+			}
+			btn[1].onclick=function () {
+				div1.style.display='none';
+				div2.style.display='none';
+			}
+		}
+	</script>
+</head>
+<body>
+	<button>弹出层</button>
+	<div id="mask"></div>
+	<div id="content">
+		<div id="top">
+			<button>×</button>
+		</div>
+		<div id="bottom"></div>
+	</div>
+</body>
+</html>

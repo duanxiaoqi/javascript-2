@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		span {
+			display: inline-block;
+			width: 60px;
+			height: 30px;
+			border: 4px solid grey;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function () {
+			var sum=100;
+			var con=true;
+			var span=document.getElementsByTagName('span');
+			var button=document.getElementsByTagName('button')[0];
+			function hello() {
+				 
+					sum--;
+					var m=sum/60;
+					var s=sum%60;
+					span[0].innerHTML=parseInt(m);
+					span[1].innerHTML=parseInt(s);
+				
+			}
+			button.onclick=function () {
+				if(con) {
+						timer=setInterval(hello,1000);				
+					con=false;
+				} else {
+					clearInterval(timer);
+					con=true;
+				}
+				
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<span></span>分
+		<span></span>秒
+	</div>
+	<button>启动</button>
+</body>
+</html>

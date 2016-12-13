@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+		}
+
+		#box {
+			width: 100px;
+			height: 100px;
+			background: black;
+			margin: 30px auto;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function () {
+			var input=document.getElementsByTagName('input');
+			var box=document.getElementById('box');
+
+			input[0].onclick=function () {
+				box.style.display="block";
+				box.style.width="200px";
+			}
+			input[1].onclick=function () {
+				box.style.display="block";
+				box.style.height="200px";
+			}
+			input[2].onclick=function () {
+				box.style.display="block";
+				box.style.background="red";
+			}
+			input[3].onclick=function () {
+				box.style.display="block";
+				box.style.display="none";
+			}
+			input[4].onclick=function () {
+				box.style.display="block";
+				box.style.width="100px";
+				box.style.height="100px";
+				box.style.background="black";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<input type="button" value="变宽">
+		<input type="button" value="变高">
+		<input type="button" value="变色">
+		<input type="button" value="隐藏">
+		<input type="button" value="重置">
+	</div>
+	<div id="box"></div>
+	123456
+</body>
+</html>
